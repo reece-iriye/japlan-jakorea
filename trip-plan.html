@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Japan & South Korea — Sept 24–Oct 5, 2026</title>
+  <style>
+    :root {
+      --jp-red: #c0392b;
+      --kr-blue: #1a3a6e;
+      --kr-red: #c0392b;
+      --cream: #fdf8f0;
+      --dark: #1a1a1a;
+      --mid: #444;
+      --light: #888;
+      --border: #e8e0d0;
+      --jp-bg: #fff5f5;
+      --kr-bg: #f0f4ff;
+      --tag-bg: #f0ede8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 24px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-flag {
+      font-size: 3rem;
+      letter-spacing: 8px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: normal;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .hero .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.75;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: 300;
+    }
+    .hero .dates {
+      margin-top: 28px;
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 10px 28px;
+      border-radius: 40px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      opacity: 0.9;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── OVERVIEW STRIP ── */
+    .overview-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 48px 0 0;
+      background: white;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .overview-cell {
+      padding: 24px 20px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .overview-cell:last-child { border-right: none; }
+    .overview-cell .label {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--light);
+      margin-bottom: 6px;
+    }
+    .overview-cell .value {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--dark);
+    }
+    .overview-cell .sub {
+      font-size: 0.8rem;
+      color: var(--light);
+      font-family: 'Helvetica Neue', sans-serif;
+      margin-top: 2px;
+    }
+
+    /* ── SEGMENT HEADERS ── */
+    .segment-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 56px 0 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid;
+    }
+    .segment-header.japan { border-color: var(--jp-red); }
+    .segment-header.korea { border-color: var(--kr-blue); }
+    .segment-icon { font-size: 2rem; }
+    .segment-header h2 {
+      font-size: 1.8rem;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+    .segment-header.japan h2 { color: var(--jp-red); }
+    .segment-header.korea h2 { color: var(--kr-blue); }
+    .segment-dates {
+      margin-left: auto;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.85rem;
+      color: var(--light);
+      letter-spacing: 1px;
+    }
+
+    /* ── DAY CARD ── */
+    .day-card {
+      background: white;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    }
+    .day-header {
+      display: flex;
+      align-items: center;
+      padding: 16px 24px;
+      gap: 16px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .day-header:hover { background: #fafafa; }
+    .day-num {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: white;
+      background: var(--jp-red);
+      padding: 4px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .korea .day-num { background: var(--kr-blue); }
+    .day-title {
+      font-size: 1.05rem;
+      font-weight: bold;
+      flex: 1;
+    }
+    .day-date {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.8rem;
+      color: var(--light);
+    }
+    .day-body {
+      padding: 0 24px 24px;
+    }
+
+    /* ── TIME BLOCKS ── */
+    .time-block {
+      margin-top: 18px;
+    }
+    .time-label {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--light);
+      margin-bottom: 8px;
+    }
+    .time-block ul {
+      list-style: none;
+      padding: 0;
+    }
+    .time-block ul li {
+      padding: 5px 0 5px 18px;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--mid);
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .time-block ul li:last-child { border-bottom: none; }
+    .time-block ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--border);
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    .highlight { font-weight: bold; color: var(--dark); }
+
+    .tip {
+      background: #fffbeb;
+      border-left: 3px solid #f59e0b;
+      padding: 10px 14px;
+      margin-top: 14px;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.88rem;
+      color: #78350f;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    .tip::before { content: '💡 '; }
+
+    /* ── SECTION: LOGISTICS ── */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: normal;
+      letter-spacing: 1px;
+      margin: 56px 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--dark);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.88rem;
+      margin-bottom: 24px;
+    }
+    th {
+      background: var(--tag-bg);
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--mid);
+      border-bottom: 2px solid var(--border);
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--mid);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #fafaf8; }
+    td strong { color: var(--dark); }
+
+    /* ── CHECKLIST ── */
+    .checklist {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+      margin-bottom: 24px;
+    }
+    .checklist li {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.9rem;
+      color: var(--mid);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .checklist li::before {
+      content: '☐';
+      color: var(--border);
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── FOOD GRID ── */
+    .food-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .food-section h3 {
+      font-size: 1rem;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    .food-section h3.jp { color: var(--jp-red); }
+    .food-section h3.kr { color: var(--kr-blue); }
+
+    /* ── HOTEL GRID ── */
+    .hotel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .hotel-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .hotel-card .city {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--light);
+      margin-bottom: 10px;
+    }
+    .hotel-card .tier { margin-bottom: 4px; }
+    .hotel-card .tier-label {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--light);
+    }
+    .hotel-card .tier-names {
+      font-size: 0.85rem;
+      color: var(--mid);
+    }
+
+    /* ── PHRASE TABLE ── */
+    .phrase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    /* ── PACKING ── */
+    .packing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .pack-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.88rem;
+      color: var(--mid);
+    }
+    .pack-item strong { display: block; color: var(--dark); margin-bottom: 2px; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.78rem;
+      color: var(--light);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .overview-strip { grid-template-columns: 1fr; }
+      .overview-cell { border-right: none; border-bottom: 1px solid var(--border); }
+      .food-grid, .hotel-grid, .phrase-grid, .packing-grid, .checklist { grid-template-columns: 1fr; }
+      .segment-header { flex-wrap: wrap; }
+      .segment-dates { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-flag">🇯🇵 &nbsp; 🇰🇷</div>
+  <h1>Japan &amp; South Korea</h1>
+  <div class="subtitle">A 12-Day Journey</div>
+  <div class="dates">September 24 – October 5, 2026</div>
+</div>
+
+<div class="container">
+
+  <!-- OVERVIEW STRIP -->
+  <div class="overview-strip">
+    <div class="overview-cell">
+      <div class="label">Arrive</div>
+      <div class="value">Tokyo, Japan</div>
+      <div class="sub">Sept 24 · NRT or HND</div>
+    </div>
+    <div class="overview-cell">
+      <div class="label">Transit</div>
+      <div class="value">KIX → ICN</div>
+      <div class="sub">Sept 30 · Osaka to Seoul</div>
+    </div>
+    <div class="overview-cell">
+      <div class="label">Depart</div>
+      <div class="value">Seoul, Korea</div>
+      <div class="sub">Oct 5 · ICN</div>
+    </div>
+  </div>
+
+  <!-- PRE-TRIP CHECKLIST -->
+  <h2 class="section-title">Pre-Trip Checklist</h2>
+  <ul class="checklist">
+    <li>Book flight: home → NRT/HND (arrive Sept 24)</li>
+    <li>Book flight: ICN → home (depart Oct 5)</li>
+    <li>Book flight: KIX → ICN (Sept 30 afternoon)</li>
+    <li>Book hotels (see recommendations below)</li>
+    <li>Buy JR Pass before leaving home (cheaper abroad)</li>
+    <li>Book TeamLab Planets Tokyo in advance</li>
+    <li>Book DMZ / JSA tour in Seoul in advance</li>
+    <li>Get Suica/Pasmo IC card at Japan airport</li>
+    <li>Get T-money card at Korean airport</li>
+    <li>Purchase eSIM or pocket WiFi for Japan</li>
+    <li>Purchase data SIM at ICN for Korea</li>
+    <li>Notify bank/credit cards of travel dates</li>
+    <li>Download Google Maps offline (all 4 cities)</li>
+    <li>Download Papago for Korean translation</li>
+    <li>Get travel insurance</li>
+    <li>Check visa requirements — US citizens: visa-free both countries</li>
+  </ul>
+
+  <!-- JAPAN SEGMENT -->
+  <div class="segment-header japan">
+    <span class="segment-icon">🗾</span>
+    <h2>Japan</h2>
+    <span class="segment-dates">Sept 24 – 30 · 6 days · Tokyo + Kyoto + Osaka</span>
+  </div>
+
+  <!-- Day 1 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num">Day 1</span>
+      <span class="day-title">Arrive Tokyo</span>
+      <span class="day-date">Wednesday, Sept 24</span>
+    </div>
+    <div class="day-body">
+      <div class="time-block">
+        <div class="time-label">Arrival</div>
+        <ul>
+          <li>Land at <span class="highlight">Narita (NRT)</span> or <span class="highlight">Haneda (HND)</span></li>
+          <li>Activate JR Pass at airport JR office (if purchased)</li>
+          <li>Pick up <span class="highlight">Suica or Pasmo IC card</span> at airport — load ¥3,000 to start</li>
+          <li>Take Narita Express (N'EX) or Haneda Monorail into the city</li>
+          <li>Check in — recommended area: <span class="highlight">Shinjuku</span></li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Evening</div>
+        <ul>
+          <li>Dinner at a nearby <span class="highlight">izakaya</span> — yakitori skewers, cold Sapporo</li>
+          <li>Light stroll through <span class="highlight">Omoide Yokocho</span> (Memory Lane) if energy allows</li>
+        </ul>
+      </div>
+      <div class="tip">Keep Day 1 easy. Jet lag going west→east hits hard. You'll be up at 4 am regardless — save energy for tomorrow.</div>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num">Day 2</span>
+      <span class="day-title">Tokyo — Harajuku · Shibuya · Shinjuku</span>
+      <span class="day-date">Thursday, Sept 25</span>
+    </div>
+    <div class="day-body">
+      <div class="time-block">
+        <div class="time-label">Morning</div>
+        <ul>
+          <li><span class="highlight">Meiji Jingu Shrine</span> — serene forested shrine in the heart of the city; go early</li>
+          <li><span class="highlight">Harajuku / Takeshita Street</span> — youth fashion, crepes, wild storefronts</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Afternoon</div>
+        <ul>
+          <li><span class="highlight">Shibuya Scramble Crossing</span> — the world's busiest pedestrian crossing</li>
+          <li><span class="highlight">Shibuya Sky</span> observation deck — 360° views; book timed entry online in advance</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Evening</div>
+        <ul>
+          <li>Dinner in Shinjuku — counter ramen or conveyor belt sushi</li>
+          <li><span class="highlight">Golden Gai</span> — maze of tiny atmospheric bars; each seats ~8 people; just walk in</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num">Day 3</span>
+      <span class="day-title">Tokyo — Asakusa · Akihabara · TeamLab</span>
+      <span class="day-date">Friday, Sept 26</span>
+    </div>
+    <div class="day-body">
+      <div class="time-block">
+        <div class="time-label">Morning</div>
+        <ul>
+          <li><span class="highlight">Senso-ji Temple</span> in Asakusa — Tokyo's oldest temple; arrive by 8 am before crowds</li>
+          <li>Browse <span class="highlight">Nakamise-dori</span> shopping street — ningyo-yaki cakes, folding fans, daruma dolls</li>
+          <li>Walk along the <span class="highlight">Sumida River</span> waterfront</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Afternoon</div>
+        <ul>
+          <li><span class="highlight">Akihabara</span> — electronics, retro games, anime goods; great for browsing even without the hobby</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Evening</div>
+        <ul>
+          <li><span class="highlight">TeamLab Planets</span> (Toyosu) — immersive digital art, ~1.5 hrs; <strong>must be pre-booked, sells out weeks ahead</strong></li>
+          <li>Dinner in Toyosu or back in central Tokyo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num">Day 4</span>
+      <span class="day-title">Day Trip — Kamakura</span>
+      <span class="day-date">Saturday, Sept 27</span>
+    </div>
+    <div class="day-body">
+      <div class="time-block">
+        <div class="time-label">All Day</div>
+        <ul>
+          <li>Take <span class="highlight">JR Yokosuka Line</span> from Tokyo to Kamakura (~1 hr)</li>
+          <li><span class="highlight">Kotoku-in</span> — the 13-meter Great Buddha (Daibutsu); you can step inside the statue</li>
+          <li><span class="highlight">Hase-dera Temple</span> — tiered gardens and coastal views over the Pacific</li>
+          <li>Walk the <span class="highlight">Daibutsu Hiking Trail</span> through forested hills to Kita-Kamakura</li>
+          <li><span class="highlight">Hokoku-ji Temple</span> — bamboo grove garden; matcha served on site</li>
+          <li>Late lunch / early dinner in Kamakura town before returning to Tokyo</li>
+        </ul>
+      </div>
+      <div class="tip">Alternative: Nikko (ornate Toshogu Shrine, waterfalls, cedar avenues) — also ~2 hrs from Tokyo, more grand and mountainous vs. Kamakura's seaside calm.</div>
+    </div>
+  </div>
+
+  <!-- Day 5 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num">Day 5</span>
+      <span class="day-title">Shinkansen to Kyoto + Fushimi Inari</span>
+      <span class="day-date">Sunday, Sept 28</span>
+    </div>
+    <div class="day-body">
+      <div class="time-block">
+        <div class="time-label">Morning</div>
+        <ul>
+          <li>Late breakfast in Tokyo; check out of hotel</li>
+          <li>Board <span class="highlight">Tokaido Shinkansen</span> from Tokyo Station → Kyoto Station</li>
+          <li>~2h 15min on Nozomi / ~2h 40min on Hikari (JR Pass covers Hikari, not Nozomi)</li>
+          <li>Arrive Kyoto midday; check in — recommended: <span class="highlight">Gion or Higashiyama area</span></li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Afternoon / Evening</div>
+        <ul>
+          <li><span class="highlight">Fushimi Inari Taisha</span> — thousands of torii gates winding up a mountain; allow 2–4 hrs</li>
+          <li>Go late afternoon for softer light and fewer crowds at the upper gates</li>
+          <li>Return to Gion district; dinner: <span class="highlight">kaiseki</span> (multi-course Japanese cuisine) — worth splurging once</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 6 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num">Day 6</span>
+      <span class="day-title">Kyoto — Arashiyama · Kinkaku-ji · Pontocho</span>
+      <span class="day-date">Monday, Sept 29</span>
+    </div>
+    <div class="day-body">
+      <div class="time-block">
+        <div class="time-label">Morning</div>
+        <ul>
+          <li><span class="highlight">Arashiyama Bamboo Grove</span> — arrive before 8 am to beat the tour groups</li>
+          <li><span class="highlight">Tenryu-ji</span> — World Heritage Zen garden with koi ponds and raked gravel</li>
+          <li>Optional: rent a bicycle and explore Okochi Sanso garden, Jojakko-ji temple</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Afternoon</div>
+        <ul>
+          <li><span class="highlight">Kinkaku-ji</span> (Golden Pavilion) — iconic gold-leaf temple; mid-afternoon is slightly less crowded</li>
+          <li><span class="highlight">Ryoan-ji</span> — Japan's most famous rock garden; genuinely meditative</li>
+          <li><span class="highlight">Nishiki Market</span> ("Kyoto's Kitchen") — narrow covered market; try tsukemono pickles, tamagoyaki, matcha mochi</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Evening</div>
+        <ul>
+          <li>Dinner in <span class="highlight">Pontocho Alley</span> — narrow lantern-lit lane of restaurants along the Kamo River</li>
+          <li>Evening walk through <span class="highlight">Gion</span> — may spot maiko (apprentice geisha) after 8 pm</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 7 -->
+  <div class="day-card">
+    <div class="day-header">
+      <span class="day-num">Day 7</span>
+      <span class="day-title">Osaka Morning → Fly to Seoul</span>
+      <span class="day-date">Tuesday, Sept 30</span>
+    </div>
+    <div class="day-body">
+      <div class="time-block">
+        <div class="time-label">Morning</div>
+        <ul>
+          <li>Train from Kyoto to Osaka (~15 min, JR Kyoto Line or Hankyu)</li>
+          <li>Store luggage in coin lockers at Namba or Shin-Osaka</li>
+          <li><span class="highlight">Dotonbori canal</span> — neon signage, takoyaki (octopus balls), okonomiyaki; the iconic Glico Running Man sign</li>
+          <li>Optional: <span class="highlight">Osaka Castle</span> park for a quieter morning alternative</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Afternoon</div>
+        <ul>
+          <li>Head to <span class="highlight">Kansai International Airport (KIX)</span> — allow 60–90 min from Namba by Nankai Rapid</li>
+          <li>Afternoon/early evening flight: <span class="highlight">KIX → ICN Incheon</span> (~2 hrs)</li>
+          <li>Arrive Seoul; take AREX Airport Railroad to city center (~43 min direct to Seoul Station)</li>
+          <li>Check in — recommended: <span class="highlight">Myeongdong</span> or <span class="highlight">Hongdae</span></li>
+        </ul>
+      </div>
+      <div class="tip">Book the KIX→ICN flight as early as possible — there are many airlines (Korean Air, Asiana, Peach, Jeju Air) but afternoon slots fill up. Target 3–5 pm departure.</div>
+    </div>
+  </div>
+
+  <!-- KOREA SEGMENT -->
+  <div class="segment-header korea">
+    <span class="segment-icon">🏙️</span>
+    <h2>South Korea</h2>
+    <span class="segment-dates">Sept 30 – Oct 5 · 5 days · Seoul</span>
+  </div>
+
+  <!-- Day 8 -->
+  <div class="day-card korea">
+    <div class="day-header">
+      <span class="day-num">Day 8</span>
+      <span class="day-title">Seoul — Gyeongbokgung · Bukchon · Myeongdong</span>
+      <span class="day-date">Wednesday, Oct 1</span>
+    </div>
+    <div class="day-body">
+      <div class="time-block">
+        <div class="time-label">Morning</div>
+        <ul>
+          <li><span class="highlight">Gyeongbokgung Palace</span> — the grandest Joseon dynasty palace (1395); arrives 9 am sharp</li>
+          <li>Rent a <span class="highlight">hanbok</span> at the gates — free palace entry in traditional dress</li>
+          <li>Watch the <span class="highlight">Royal Guard Changing Ceremony</span> at 10 am or 2 pm daily</li>
+          <li><span class="highlight">National Folk Museum of Korea</span> inside palace grounds — free with palace entry</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Afternoon</div>
+        <ul>
+          <li><span class="highlight">Bukchon Hanok Village</span> — hillside neighborhood of 600-year-old traditional Korean houses; excellent photos</li>
+          <li><span class="highlight">Insadong</span> — antiques, Korean crafts, tea houses, Ssamziegil courtyard market</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Evening</div>
+        <ul>
+          <li><span class="highlight">Myeongdong street food</span> — tteokbokki (spicy rice cakes), hotteok (sweet pancakes), Korean fried chicken</li>
+          <li>Beauty shopping: Olive Young, Innisfree, Etude House are all clustered here</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 9 -->
+  <div class="day-card korea">
+    <div class="day-header">
+      <span class="day-num">Day 9</span>
+      <span class="day-title">DMZ Tour + Gangnam Evening</span>
+      <span class="day-date">Thursday, Oct 2</span>
+    </div>
+    <div class="day-body">
+      <div class="time-block">
+        <div class="time-label">Morning / Afternoon (Full Day)</div>
+        <ul>
+          <li><span class="highlight">DMZ (Demilitarized Zone) Tour</span> — must book in advance via licensed operator (USO, Koridoor, or Viator operators)</li>
+          <li>Half-day: 3rd Infiltration Tunnel, Dora Observatory, Dorasan Station</li>
+          <li>Full-day also includes Imjingak Peace Park and optional JSA (Joint Security Area) — JSA requires separate advance booking with additional passport requirements</li>
+          <li>Tours depart Seoul around 8 am, return by 1–5 pm depending on type</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Evening (Back in Seoul ~5–6 pm)</div>
+        <ul>
+          <li><span class="highlight">Gangnam</span> — upscale district; dinner at a Korean BBQ restaurant</li>
+          <li><span class="highlight">COEX Starfield Library</span> — stunning two-story underground bookshelf installation inside COEX Mall; free to enter</li>
+          <li><span class="highlight">Bongeunsa Temple</span> next to COEX — ancient temple with skyscrapers as backdrop; open until 9 pm</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 10 -->
+  <div class="day-card korea">
+    <div class="day-header">
+      <span class="day-num">Day 10</span>
+      <span class="day-title">Hongdae + Han River</span>
+      <span class="day-date">Friday, Oct 3</span>
+    </div>
+    <div class="day-body">
+      <div class="time-block">
+        <div class="time-label">Morning</div>
+        <ul>
+          <li><span class="highlight">Hongdae</span> (Hongik University area) — street murals, independent boutiques, excellent cafes, morning bakeries</li>
+          <li>Grab coffee at a specialty roaster; the café culture here is exceptional</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Afternoon</div>
+        <ul>
+          <li><span class="highlight">Yeouido Han River Park</span> — rent a bike along the river or join locals with a picnic; grab banana milk from a convenience store</li>
+          <li>Optional: <span class="highlight">Lotte World</span> — indoor/outdoor theme park; fun if you want something energetic</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Evening</div>
+        <ul>
+          <li><span class="highlight">Noryangjin Fish Market</span> — massive 24-hr market; choose your live seafood and take it upstairs to a restaurant that cooks it for you</li>
+          <li>Return to Hongdae for the nightlife scene if energy allows</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 11 -->
+  <div class="day-card korea">
+    <div class="day-header">
+      <span class="day-num">Day 11</span>
+      <span class="day-title">N Seoul Tower · DDP · Gwangjang Market</span>
+      <span class="day-date">Saturday, Oct 4</span>
+    </div>
+    <div class="day-body">
+      <div class="time-block">
+        <div class="time-label">Morning</div>
+        <ul>
+          <li><span class="highlight">Namsan Mountain</span> — take the cable car up or hike the trail (30 min forested walk)</li>
+          <li><span class="highlight">N Seoul Tower</span> — observation deck with panoramic views over all of Seoul; the "locks of love" fence</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Afternoon</div>
+        <ul>
+          <li><span class="highlight">Dongdaemun Design Plaza (DDP)</span> — futuristic Zaha Hadid building; rotating design exhibitions</li>
+          <li><span class="highlight">Dongdaemun Market</span> surrounding DDP — vast clothing and textile wholesale market; great for fashion browsing</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Evening</div>
+        <ul>
+          <li><span class="highlight">Gwangjang Market</span> — Seoul's oldest traditional market (est. 1905); famous for bindaetteok (mung bean pancakes), mayak kimbap (addictive mini rice rolls), and raw beef yukhoe</li>
+          <li>Final evening drinks in Hongdae or Itaewon</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 12 -->
+  <div class="day-card korea">
+    <div class="day-header">
+      <span class="day-num">Day 12</span>
+      <span class="day-title">Depart Seoul (ICN)</span>
+      <span class="day-date">Sunday, Oct 5</span>
+    </div>
+    <div class="day-body">
+      <div class="time-block">
+        <div class="time-label">Morning</div>
+        <ul>
+          <li>Final morning shopping at <span class="highlight">Myeongdong</span> or <span class="highlight">Insadong</span></li>
+          <li>Good picks: Olive Young skincare haul, Korean instant noodles, honey butter chips, Korean teas, gochujang paste</li>
+        </ul>
+      </div>
+      <div class="time-block">
+        <div class="time-label">Airport</div>
+        <ul>
+          <li>Head to <span class="highlight">Incheon International Airport (ICN)</span> — allow at least <strong>3 hours before international departure</strong></li>
+          <li>AREX from Seoul Station: 43 min direct express / 66 min all-stop — direct is worth the extra ₩4,500</li>
+          <li>Incheon has excellent duty-free shopping — budget 30–45 min post-security</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGISTICS -->
+  <h2 class="section-title">Getting Around — Japan</h2>
+  <table>
+    <thead><tr><th>Route</th><th>Method</th><th>Time</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td><strong>NRT → Central Tokyo</strong></td><td>Narita Express (N'EX)</td><td>60–80 min</td><td>¥3,070</td></tr>
+      <tr><td><strong>HND → Central Tokyo</strong></td><td>Tokyo Monorail or Keikyu</td><td>30–40 min</td><td>¥500–600</td></tr>
+      <tr><td><strong>Within Tokyo</strong></td><td>Suica/Pasmo on metro</td><td>varies</td><td>¥150–350/ride</td></tr>
+      <tr><td><strong>Tokyo → Kyoto</strong></td><td>Shinkansen Hikari (JR Pass)</td><td>~2h 40m</td><td>¥13,320 or JR Pass</td></tr>
+      <tr><td><strong>Kyoto → Osaka (Namba)</strong></td><td>Hankyu or JR Kyoto Line</td><td>15 min</td><td>¥410–580</td></tr>
+      <tr><td><strong>Osaka Namba → KIX</strong></td><td>Nankai Rapid</td><td>45 min</td><td>¥1,430</td></tr>
+    </tbody>
+  </table>
+  <div class="tip" style="margin-bottom:24px;">JR Pass (7-day, ~¥50,000): covers all Shinkansen (Hikari/Sakura) and JR trains. Pays off if doing Tokyo + Kyoto + day trips. Buy before leaving home — it cannot be purchased in Japan.</div>
+
+  <h2 class="section-title">Getting Around — Seoul</h2>
+  <table>
+    <thead><tr><th>Route</th><th>Method</th><th>Time</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td><strong>ICN → Seoul Station</strong></td><td>AREX Direct Express</td><td>43 min</td><td>₩9,500</td></tr>
+      <tr><td><strong>ICN → Seoul Station</strong></td><td>AREX All-stop</td><td>66 min</td><td>₩4,950</td></tr>
+      <tr><td><strong>Within Seoul</strong></td><td>T-money card on metro/bus</td><td>varies</td><td>₩1,400–2,000/ride</td></tr>
+      <tr><td><strong>Seoul → ICN (departure)</strong></td><td>AREX from Seoul Station</td><td>43–66 min</td><td>₩4,950–9,500</td></tr>
+    </tbody>
+  </table>
+  <div class="tip" style="margin-bottom:24px;">T-money card: buy at any GS25, CU, or 7-Eleven inside ICN for ₩2,500; load cash at any metro station. Works on all Seoul buses and subway.</div>
+
+  <!-- MONEY -->
+  <h2 class="section-title">Money</h2>
+  <table>
+    <thead><tr><th>Country</th><th>Currency</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Japan</strong></td><td>Japanese Yen (¥)</td><td>Still largely cash-based — many small restaurants and shrines are cash-only. Carry ¥30,000–50,000 at all times. Best ATMs: 7-Eleven (accepts foreign cards, low fees)</td></tr>
+      <tr><td><strong>South Korea</strong></td><td>Korean Won (₩)</td><td>Cards widely accepted, but markets and street food are cash. Carry ₩50,000–100,000. Best ATMs: KEB Hana Bank or KakaoBank. Avoid airport kiosk exchange rates.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- HOTELS -->
+  <h2 class="section-title">Hotels</h2>
+  <div class="hotel-grid">
+    <div class="hotel-card">
+      <div class="city">Tokyo · Sept 24–28 · 4 nights</div>
+      <div class="tier"><span class="tier-label">Budget</span><div class="tier-names">APA Hotel Shinjuku, Dormy Inn Premium</div></div>
+      <div class="tier"><span class="tier-label">Mid</span><div class="tier-names">Citadines Central Shinjuku, Keio Plaza Hotel</div></div>
+      <div class="tier"><span class="tier-label">Splurge</span><div class="tier-names">Park Hyatt Tokyo, Andaz Tokyo Toranomon</div></div>
+    </div>
+    <div class="hotel-card">
+      <div class="city">Kyoto · Sept 28–30 · 2 nights</div>
+      <div class="tier"><span class="tier-label">Budget</span><div class="tier-names">Piece Hostel Kyoto, Len Kyoto Kawaramachi</div></div>
+      <div class="tier"><span class="tier-label">Mid</span><div class="tier-names">Hotel Kanra Kyoto, Kyoto Century Hotel</div></div>
+      <div class="tier"><span class="tier-label">Splurge</span><div class="tier-names">Hoshinoya Kyoto, The Thousand Kyoto</div></div>
+    </div>
+    <div class="hotel-card">
+      <div class="city">Seoul · Sept 30–Oct 5 · 5 nights</div>
+      <div class="tier"><span class="tier-label">Budget</span><div class="tier-names">Generator Seoul (Hongdae), Kim's Family</div></div>
+      <div class="tier"><span class="tier-label">Mid</span><div class="tier-names">Ryse Hotel (Hongdae), Lotte City Myeongdong</div></div>
+      <div class="tier"><span class="tier-label">Splurge</span><div class="tier-names">Park Hyatt Seoul, Four Seasons Seoul</div></div>
+    </div>
+  </div>
+
+  <!-- FOOD -->
+  <h2 class="section-title">Food Must-Tries</h2>
+  <div class="food-grid">
+    <div class="food-section">
+      <h3 class="jp">🇯🇵 Japan</h3>
+      <table>
+        <thead><tr><th>Dish</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Ramen</strong></td><td>Tonkotsu, shoyu, or miso — every region differs</td></tr>
+          <tr><td><strong>Sushi / Omakase</strong></td><td>Tsukiji Outer Market for morning sushi breakfast</td></tr>
+          <tr><td><strong>Yakitori</strong></td><td>Yurakucho yakitori alley under the train tracks</td></tr>
+          <tr><td><strong>Kaiseki</strong></td><td>Multi-course fine dining — once in Kyoto</td></tr>
+          <tr><td><strong>Takoyaki</strong></td><td>Osaka octopus balls from a street stall</td></tr>
+          <tr><td><strong>Matcha everything</strong></td><td>Soft serve, mochi, latte — especially in Kyoto</td></tr>
+          <tr><td><strong>Conveyor belt sushi</strong></td><td>Kaiten-zushi — fun, affordable, interactive</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="food-section">
+      <h3 class="kr">🇰🇷 Korea</h3>
+      <table>
+        <thead><tr><th>Dish</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Korean BBQ</strong></td><td>Samgyeopsal (pork belly) — grill at the table</td></tr>
+          <tr><td><strong>Tteokbokki</strong></td><td>Spicy rice cakes — street food staple</td></tr>
+          <tr><td><strong>Bibimbap</strong></td><td>Mixed rice bowl with gochujang</td></tr>
+          <tr><td><strong>Sundubu jjigae</strong></td><td>Soft tofu stew with seafood or pork</td></tr>
+          <tr><td><strong>Chimaek</strong></td><td>Fried chicken + beer — a Korean institution</td></tr>
+          <tr><td><strong>Bingsu</strong></td><td>Shaved ice dessert; still warm enough in early Oct</td></tr>
+          <tr><td><strong>Gwangjang bindaetteok</strong></td><td>Mung bean pancakes at Gwangjang Market — mandatory</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- PACKING -->
+  <h2 class="section-title">Packing Notes</h2>
+  <div class="packing-grid">
+    <div class="pack-item"><strong>Shoes</strong>15,000–25,000 steps/day. Bring broken-in walking shoes. Non-negotiable.</div>
+    <div class="pack-item"><strong>Layers</strong>Late Sept/early Oct: 10–25°C range. Pack light layers — a shell jacket, mid-layer, and t-shirts.</div>
+    <div class="pack-item"><strong>Power Adapters</strong>Japan: Type A (same as US). Korea: Type C/F (EU plug). Bring a universal adapter or two.</div>
+    <div class="pack-item"><strong>Slip-on Shoes</strong>Many shrines and some restaurants require removing shoes. Slip-ons save significant time.</div>
+    <div class="pack-item"><strong>Day Bag</strong>A lightweight packable tote or small daypack for market hauls and day trips.</div>
+    <div class="pack-item"><strong>Cash Wallet</strong>Keep a separate small wallet for cash — Japan is heavily cash-based.</div>
+  </div>
+
+  <!-- PHRASES -->
+  <h2 class="section-title">Key Phrases</h2>
+  <div class="phrase-grid">
+    <div>
+      <table>
+        <thead><tr><th colspan="3">🇯🇵 Japanese</th></tr><tr><th>English</th><th>Japanese</th><th>Pronunciation</th></tr></thead>
+        <tbody>
+          <tr><td>Thank you</td><td>ありがとうございます</td><td>Arigatou gozaimasu</td></tr>
+          <tr><td>Excuse me / Sorry</td><td>すみません</td><td>Sumimasen</td></tr>
+          <tr><td>Where is...?</td><td>...はどこですか？</td><td>...wa doko desu ka?</td></tr>
+          <tr><td>How much?</td><td>いくらですか？</td><td>Ikura desu ka?</td></tr>
+          <tr><td>Do you have English?</td><td>英語はありますか？</td><td>Eigo wa arimasu ka?</td></tr>
+          <tr><td>No thank you</td><td>結構です</td><td>Kekkou desu</td></tr>
+          <tr><td>Delicious!</td><td>美味しい！</td><td>Oishii!</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <table>
+        <thead><tr><th colspan="3">🇰🇷 Korean</th></tr><tr><th>English</th><th>Korean</th><th>Pronunciation</th></tr></thead>
+        <tbody>
+          <tr><td>Thank you</td><td>감사합니다</td><td>Gamsahamnida</td></tr>
+          <tr><td>Excuse me</td><td>실례합니다</td><td>Sillyehamnida</td></tr>
+          <tr><td>Where is...?</td><td>...어디예요?</td><td>...eodie-yo?</td></tr>
+          <tr><td>How much?</td><td>얼마예요?</td><td>Eolma-eyo?</td></tr>
+          <tr><td>Delicious!</td><td>맛있어요!</td><td>Masisseoyo!</td></tr>
+          <tr><td>One more please</td><td>하나 더 주세요</td><td>Hana deo juseyo</td></tr>
+          <tr><td>No thank you</td><td>괜찮아요</td><td>Gwaenchanayo</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Japan &amp; South Korea · Sept 24–Oct 5, 2026 &nbsp;·&nbsp; Generated July 1, 2026 &nbsp;·&nbsp; Double-check opening hours and seasonal schedules closer to departure.
+</footer>
+
+</body>
+</html>
